@@ -10,23 +10,23 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def deletereview(request,review_id):
     movie = get_object_or_404(Review,pk=review_id,user=request.user)
-    review.delete()
-    return redirect('detail',review.movie_id)
+    Review.delete()
+    return redirect('detail',Review.movie_id)
 
 
 @login_required
 def updatereview(request,review_id_id):
-    movie = get_object_or_404(Review,pk=review_id,user=request.user)
+    movie = get_object_or_404(Review,pk=review_id_id,user=request.user)
     if request.method == 'GET':
-        form = ReviewForm(instance=review)
-        return render(request, 'updatereview.html',{'review': review,'form':form})
+        form = ReviewForm(instance=Review)
+        return render(request, 'updatereview.html',{'review': Review,'form':form})
     else:
         try:
-            form = ReviewForm(request.POST,instance=review)
+            form = ReviewForm(request.POST,instance=Review)
             form.save()
-            return redirect('detail', review.movie.id)
+            return redirect('detail', Review.movie.id)
         except ValueError:
-            return render(request,'updatereview.html',{'review': review,'form':form,'error':'Bad data in form'})
+            return render(request,'updatereview.html',{'review': Review,'form':form,'error':'Bad data in form'})
 
 
 @login_required
