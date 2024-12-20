@@ -31,10 +31,10 @@ def logoutaccount(request):
 
 
 def signupaccount(request):
-    if request == 'GET':
+    if request.method == 'GET':
         return render(request,'signupaccount.html',{'form':UserCreationForm})
     else:
-        if request.POST['password1'] == request:
+        if request.POST['password1'] == request.POST['password2']:
             try:
                 user = User.objects.create_user(request.POST['username'],password= request.POST['password1'])
                 user.save()

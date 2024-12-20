@@ -24,7 +24,7 @@
                 <p class="card-text">{{ review.text }}</p>
                 {% if user.is_authenticated and user == review.user %}
                   <a class="btn btn-primary me-2" href="{% url 'updatereview' review.id%}">Update</a>
-                  <a class="btn btn-danger" href="{% url 'deletereview' review.id%}">>Delete</a> 
+                  <a class="btn btn-danger" href="{% url 'deletereview' review.id%}">Delete</a> 
                 {% endif %}
                 </li>
               {% endfor %}

@@ -20,7 +20,7 @@ class Review(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE) 
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
-    watchAgain = models.BooleanField()
+    watchAgain = models.BooleanField(default=False)
 
 
     def __str__(self):
