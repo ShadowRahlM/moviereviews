@@ -18,21 +18,35 @@
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
     <style>
       body.light-mode {
-        background-image: url("{% static 'images/cheetah.jpg' %}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        color: black;
+      background-image: url("{% static 'images/cheetah.jpg' %}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: black;
       }
       body.dark-mode {
-        background-color: #121212;
-        color: white;
+      background-color: #121212;
+      color: white;
       }
       .navbar-light-mode {
-        background-color: #f8f9fa;
+      background-color: #f8f9fa;
       }
       .navbar-dark-mode {
-        background-color: #343a40;
+      background-color: #343a40;
+      }
+      .theme-btn {
+      margin-left: 10px;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      }
+      .theme-btn-light {
+      background-color: #f8f9fa;
+      color: black;
+      }
+      .theme-btn-dark {
+      background-color: #343a40;
+      color: white;
       }
     </style>
   </head>
